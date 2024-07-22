@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+{%block content%}
+    <form method="POST">
+        {%csrf_token%}
+        {{value.as_p}}
+        <button>SignUp</button>
+    </form>
+{%endblock%}

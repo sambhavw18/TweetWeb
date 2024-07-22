@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'main.css'%}">
+{%block content%}
+<div class="card">
+    {%for i in tweets%}
+    <div class="cardin">
+        <h2 class="mp">Name:{{user}}</h2>
+    <p class="mp">{{i.text}}</p>
+    {%if i.photo%}
+    <img class="imgfit mp" src="{{i.photo.url}}" alt="...">
+    {%else%}
+    <h3>No Image Detected</h3>
+    {%endif%}
+</div>
+{%endfor%}
+
+{%endblock%}

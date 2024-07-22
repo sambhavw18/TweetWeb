@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%load static%}
+    <title>
+        {%block title %}
+        Tweet.in
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+</head>
+<body>
+    <nav id="navbar">
+        <ul id="list">
+            <a class="anchor" href="{%url 'home'%}"><li>Home</li></a>
+            <a href="" class="anchor"><li>About Us</li></a>
+            <a href="{%url 'mytweet'%}" class="anchor"><li>My Tweets</li></a>
+            <li>
+                <form action="{%url 'search'%}" method="POST">
+                    {%csrf_token%}
+                    <input type="text" name="searchbar">
+                    <button class="btn" style="color: rgb(255, 204, 0);">Search</button>
+                </form>
+            </li>
+            <li>
+            {%if user.is_authenticated%}
+            <form action="{%url 'logout'%}" method="POST">
+                {%csrf_token%}
+                <button type="submit" class="btn">Logout</button>
+            </form>
+            {%else%}
+                <a class="anchor" href="{%url 'register'%}"><button class="btn blue">Register</button></a>
+                <a class="anchor" href="{%url 'login'%}"><button class="btn green">Login</button></a>
+            {%endif%}</li>
+        </ul>
+        <!-- <ul id="menu">
+            <a class="anchor" href="{%url 'home'%}"><li>Home</li></a>
+            <a href="" class="anchor"><li>About Us</li></a>
+            <a href="{%url 'mytweet'%}" class="anchor"><li>My Tweets</li></a>
+            <li>
+                <form action="{%url 'search'%}" method="POST">
+                    {%csrf_token%}
+                    <input type="text" name="searchbar">
+                    <button class="btn" style="color: rgb(255, 204, 0);">Search</button>
+                </form>
+            </li>
+            <li>
+            {%if user.is_authenticated%}
+            <form action="{%url 'logout'%}" method="POST">
+                {%csrf_token%}
+                <button type="submit" class="btn">Logout</button>
+            </form>
+            {%else%}
+                <a class="anchor" href="{%url 'register'%}"><button class="btn blue">Register</button></a>
+                <a class="anchor" href="{%url 'login'%}"><button class="btn green">Login</button></a>
+            {%endif%}</li>
+        </ul> -->
+    </nav>
+    {%block content%}
+<h1>Hey ! New here </h1>
+    {% endblock %}
+</body>
+</html>

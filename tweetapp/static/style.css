@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.btn{
+    background-color:rgba(255, 0, 0, 0.849);
+    color: aliceblue;
+    border: none;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2px;
+}
+#menu{
+    display: none;
+    background-color: black;
+}
+#list{
+    display: flex;
+    justify-content: space-around;
+}
+#list li{
+    list-style: none;
+    padding: 5px;
+    margin: 2px;
+}
+#navbar{
+    width: 100vw;
+    height: 7vh;
+    background-color: azure;
+}
+.anchor{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    margin: 5px;
+    text-shadow: 5px 5px 2px gainsboro;
+}
+.mp{
+    padding: 5px;
+    margin: 5px;
+}
+.imgfit{
+    height: 100px;
+    width: 100px;
+    border: none;
+    border-radius: 20px;
+}
+.card{
+    display: grid;
+    gap: 10px;
+}
+/* Large devices (laptops/desktops) */
+@media (min-width: 1024px) {
+    .card {
+      grid-template-columns: 1fr 1fr 1fr;
+      margin: 0;
+    }
+  }
+  
+/* Medium device */
+@media (min-width: 768px) and (max-width: 1023px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .card{
+        grid-template-columns: 1fr 1fr;
+        }
+  }
+  
+  /* small device */
+  @media (min-width: 300px) and (max-width: 767px) {
+    *{
+        margin: 0;
+        padding: 0;
+    }
+  .card{
+  grid-template-columns: 1fr;
+  }
+  #list{
+    display: none;
+}
+#menu{
+    display: flex;
+    flex-direction: column;
+    float: right;
+}
+#menu li{
+    list-style: none;
+    padding: 5px;
+    margin: 2px;
+}
+#navbar{
+    width: 100vw;
+    height: 7vh;
+    background-color: azure;
+}
+    }
+.cardin{
+    margin: 5px;
+    background-color: skyblue;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.green{
+    background: rgb(155, 255, 6);
+    color: aliceblue;
+}
+.blue{
+    background-color: blue;
+}

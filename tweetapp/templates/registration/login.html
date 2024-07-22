@@ -1,0 +1,12 @@
+{%extends 'base.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+{%block content%}
+<h3>LogIn to Tweet</h3>
+<form method="POST">
+    {%csrf_token%}
+    {{form.as_p}}
+    <button>LogIn</button>
+</form>
+<h5>Dont't have an account?<a href="{%url 'register'%}">SignUp</a></h5>
+{%endblock%}

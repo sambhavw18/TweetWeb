@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+{%block content%}
+<a class="anchor" href="{%url 'create'%}">Create New Tweet</a>
+<div class="card">
+    {%for i in tweets%}
+    <div class="cardin">
+        <h2 class="mp">Name:{{i.user}}</h2>
+    <p class="mp">{{i.text}}</p>
+    {%if i.photo%}
+    <img class="imgfit mp" src="{{i.photo.url}}" alt="...">
+    {%else%}
+    <h3>No Image Detected</h3>
+    {%endif%}
+    {%if i.user == user%}
+    <a class="anchor" href="{%url 'edit' i.id%}"><button class="btn green">Edit</button></a>
+    <a class="anchor" href="{%url 'delete' i.id%}"><button class="btn">Delete</button></a>
+    {%endif%}
+</div>
+{%endfor%}
+</div>
+{%endblock%}

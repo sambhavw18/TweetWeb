@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'main.css'%}">
+{%block content%}
+<h1>Search</h1>
+{%for i in ntweet%}
+{%for j in result%}
+{%if j in i.text%}
+<div class="cardin">
+    <h2 class="mp">Name:{{i.user}}</h2>
+<p class="mp">{{i.text}}</p>
+{%if i.photo%}
+<img class="imgfit mp" src="{{i.photo.url}}" alt="...">
+{%else%}
+<h3>No Image Detected</h3>
+{%endif%}
+{%if i.user == user%}
+<a class="anchor" href="{%url 'edit' i.id%}"><button class="btn">Edit</button></a>
+<a class="anchor" href="{%url 'delete' i.id%}"><button class="btn">Delete</button></a>
+{%endif%}
+</div>
+{%endif%}
+{%endfor%}
+{%endfor%}
+{%endblock%}

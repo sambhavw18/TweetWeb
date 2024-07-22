@@ -1,0 +1,13 @@
+{
+    "builds": [{
+        "src": "tweetweb/wsgi.py",
+        "use": "@ardnt/vercel-python-wsgi",
+        "config": { "maxLambdaSize": "15mb" }
+    }],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "tweetweb/wsgi.py"
+        }
+    ]
+}

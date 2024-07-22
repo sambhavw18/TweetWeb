@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%load static%}
+<link rel="stylesheet" href="{%static 'style.css'%}">
+{%block content%}
+<h2>
+    {%if form.instance.pk%}
+    Edit
+    {%else%}
+    Create
+    {%endif%}
+</h2>
+<form method="POST" enctype="multipart/form-data" class="formc">
+{%csrf_token%}
+{{form.as_p}}
+<button class="btn">Tweet</button>
+</form>
+
+{%endblock%}
